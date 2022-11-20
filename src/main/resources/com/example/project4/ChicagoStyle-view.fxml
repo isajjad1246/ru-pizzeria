@@ -22,13 +22,13 @@
                   <Label alignment="CENTER" layoutX="1.0" layoutY="81.0" prefHeight="17.0" prefWidth="203.0" text="Select Pizza Flavor:" />
                   <Label alignment="CENTER" layoutX="-2.0" layoutY="135.0" prefHeight="17.0" prefWidth="203.0" text="Select Size:" />
                   <Label alignment="CENTER" layoutX="47.0" layoutY="187.0" prefHeight="17.0" prefWidth="105.0" text="Select Toppings:" />
-                  <ComboBox fx:id="addToppings1" layoutX="182.0" layoutY="235.0" onAction="#selectMoreToppings" onMouseClicked="#selectMoreToppings" prefWidth="150.0" />
+                  <ComboBox fx:id="addToppings1" layoutX="182.0" layoutY="235.0" onMouseClicked="#selectMoreToppings" prefWidth="150.0" />
                   <Label alignment="CENTER" layoutX="43.0" layoutY="239.0" prefHeight="17.0" prefWidth="119.0" text="Additional Toppings:" />
-                  <ComboBox fx:id="toppingsBox1" layoutX="180.0" layoutY="182.0" onAction="#selectToppings" onMouseClicked="#selectToppings" prefHeight="26.0" prefWidth="150.0" />
-                  <ComboBox fx:id="sizeBox1" layoutX="182.0" layoutY="130.0" onAction="#selectSize" onMouseClicked="#selectSize" prefHeight="26.0" prefWidth="150.0" />
+                  <ComboBox fx:id="toppingsBox1" layoutX="180.0" layoutY="182.0" onMouseClicked="#selectToppings" prefHeight="26.0" prefWidth="150.0" />
+                  <ComboBox fx:id="sizeBox1" layoutX="182.0" layoutY="130.0" onMouseClicked="#selectSize" prefHeight="26.0" prefWidth="150.0" />
                   <Label layoutX="69.0" layoutY="310.0" text="Total:" />
                   <TextArea fx:id="totalBox1" layoutX="114.0" layoutY="299.0" prefHeight="32.0" prefWidth="181.0" />
-                  <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onAction="#selectFlavor" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
+                  <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>
