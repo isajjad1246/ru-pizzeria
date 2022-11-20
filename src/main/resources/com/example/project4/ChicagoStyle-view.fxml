@@ -28,7 +28,7 @@
                   <ComboBox fx:id="sizeBox1" layoutX="182.0" layoutY="130.0" onAction="#selectSize" prefHeight="26.0" prefWidth="150.0" />
                   <Label layoutX="69.0" layoutY="310.0" text="Total:" />
                   <TextArea fx:id="totalBox1" layoutX="114.0" layoutY="299.0" prefHeight="32.0" prefWidth="181.0" />
-                  <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onAction="#selectFlavor" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
+                  <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onAction="#initialize" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>

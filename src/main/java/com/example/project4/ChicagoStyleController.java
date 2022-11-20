@@ -15,6 +15,9 @@ public class ChicagoStyleController {
 
     @FXML
     private ComboBox<String> flavorBox1;
+    public void initialize() {
+        flavorBox1.setItems(FXCollections.observableArrayList("Deluxe", "BBQ Chicken", "Meatzza", "Build Your Own"));
+    }
 
     @FXML
     private ImageView imageView1;
@@ -39,9 +42,6 @@ public class ChicagoStyleController {
 //                    "Meatzza",
 //                    "Build Your Own"
 //        }
-
-
-
     }
 
     @FXML
