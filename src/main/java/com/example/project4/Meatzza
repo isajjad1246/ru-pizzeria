@@ -8,7 +8,7 @@ public class Meatzza extends Pizza{
         getToppings().add(Topping.HAM);
     }
 
-    public double price(){
+     public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){
             result = 15.99;
