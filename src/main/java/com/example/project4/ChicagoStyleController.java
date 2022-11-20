@@ -32,7 +32,7 @@ public class ChicagoStyleController {
     @FXML
     void selectFlavor(MouseEvent event) {
        // flavorBox1.setItems(FXCollections.observableArrayList("Deluxe", "BBQ Chicken", "Meatzza", "Build Your Own"));
-        flavorBox1.getItems().add("whatever");
+        flavorBox1.getItems().addAll("Deluxe", "BBQ Chicken", "Meatzza", "Build Your Own");
 //        flavorBox1.getItems().addAll(){
 //                    "Deluxe",
 //                    "BBQ Chicken",
@@ -45,17 +45,17 @@ public class ChicagoStyleController {
     }
 
     @FXML
-    void selectMoreToppings(ActionEvent event) {
+    void selectMoreToppings(MouseEvent event) {
 
     }
 
     @FXML
-    void selectSize(ActionEvent event) {
+    void selectSize(MouseEvent event) {
 
     }
 
     @FXML
-    void selectToppings(ActionEvent event) {
+    void selectToppings(MouseEvent event) {
 
     }
 
