@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
@@ -14,24 +13,22 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="237.0">
                <children>
-                  <ImageView fitHeight="130.0" fitWidth="147.0" layoutX="9.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageView1" fitHeight="130.0" fitWidth="147.0" layoutX="9.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
                   <Label alignment="CENTER" layoutX="19.0" layoutY="68.0" prefHeight="17.0" prefWidth="118.0" text="Chicago Style Pizza:" />
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="354.0">
                <children>
-                  <ListView fx:id="pizzaFlavors" layoutX="200.0" layoutY="17.0" prefHeight="188.0" prefWidth="165.0" />
                    
                   <Label alignment="CENTER" layoutX="1.0" layoutY="81.0" prefHeight="17.0" prefWidth="203.0" text="Select Pizza Flavor:" />
-                  <Label alignment="CENTER" layoutX="-2.0" layoutY="213.0" prefHeight="17.0" prefWidth="203.0" text="Select Size:" />
-                  <ComboBox layoutX="201.0" layoutY="250.0" prefHeight="26.0" prefWidth="146.0" />
-                  <Label alignment="CENTER" layoutX="36.0" layoutY="253.0" prefHeight="17.0" prefWidth="126.0" text="Select Crust:" />
-                  <Label alignment="CENTER" layoutX="41.0" layoutY="283.0" prefHeight="17.0" prefWidth="105.0" text="Select Toppings:" />
-                  <ComboBox layoutX="205.0" layoutY="333.0" prefWidth="150.0" />
-                  <Label alignment="CENTER" layoutX="41.0" layoutY="338.0" prefHeight="17.0" prefWidth="119.0" text="Additional Toppings:" />
-                  <ComboBox layoutX="204.0" layoutY="288.0" prefHeight="26.0" prefWidth="146.0" />
-                  <ComboBox layoutX="201.0" layoutY="217.0" prefHeight="26.0" prefWidth="146.0" />
-                  <Label layoutX="38.0" layoutY="434.0" text="Total:" />
-                  <TextArea layoutX="76.0" layoutY="423.0" prefHeight="32.0" prefWidth="181.0" />
+                  <Label alignment="CENTER" layoutX="-2.0" layoutY="135.0" prefHeight="17.0" prefWidth="203.0" text="Select Size:" />
+                  <Label alignment="CENTER" layoutX="47.0" layoutY="187.0" prefHeight="17.0" prefWidth="105.0" text="Select Toppings:" />
+                  <ComboBox fx:id="addToppings1" layoutX="182.0" layoutY="235.0" onAction="#selectMoreToppings" prefWidth="150.0" />
+                  <Label alignment="CENTER" layoutX="43.0" layoutY="239.0" prefHeight="17.0" prefWidth="119.0" text="Additional Toppings:" />
+                  <ComboBox fx:id="toppingsBox1" layoutX="180.0" layoutY="182.0" onAction="#selectToppings" prefHeight="26.0" prefWidth="150.0" />
+                  <ComboBox fx:id="sizeBox1" layoutX="182.0" layoutY="130.0" onAction="#selectSize" prefHeight="26.0" prefWidth="150.0" />
+                  <Label layoutX="69.0" layoutY="310.0" text="Total:" />
+                  <TextArea fx:id="totalBox1" layoutX="114.0" layoutY="299.0" prefHeight="32.0" prefWidth="181.0" />
+                  <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onAction="#selectFlavor" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>
