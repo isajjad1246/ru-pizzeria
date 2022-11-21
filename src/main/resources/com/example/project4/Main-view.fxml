@@ -19,10 +19,10 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <Button fx:id="chicagoStyle" layoutX="250.0" layoutY="82.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Chicago Style" />
-            <Button fx:id="nyStyle" layoutX="250.0" layoutY="139.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="New York Style" />
-            <Button fx:id="currOrderButton" layoutX="250.0" layoutY="188.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Current Order" />
-            <Button fx:id="storeOrderButton" layoutX="250.0" layoutY="247.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Store Orders" />
+            <Button fx:id="chicagoStyle" layoutX="250.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#chicagoStyleClick" prefHeight="29.0" prefWidth="106.0" text="Chicago Style" />
+            <Button fx:id="nyStyle" layoutX="250.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#nyStyleClick" prefHeight="29.0" prefWidth="106.0" text="New York Style" />
+            <Button fx:id="currOrderButton" layoutX="250.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#currOrderClick" prefHeight="29.0" prefWidth="106.0" text="Current Order" />
+            <Button fx:id="storeOrderButton" layoutX="250.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#storeOrderClick" prefHeight="29.0" prefWidth="106.0" text="Store Orders" />
          </children>
       </AnchorPane>
    </children>
