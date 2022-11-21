@@ -58,6 +58,16 @@ public class ChicagoStyleController implements Intializable{
 //
 //    }
 
+    @FXML
+    void addButton(ActionEvent event){
+
+    }
+
+    @FXML
+    void removeButton(ActionEvent event){
+
+    }
+
     String[] ChicagoView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
     //String currentViewItem;
 
@@ -71,12 +81,12 @@ public class ChicagoStyleController implements Intializable{
         sizeBox1.setItems(size);
 
         toppingsList.getItems().addAll(ChicagoView);
-        toppingsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-
-            }
-        });
+//        toppingsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+//
+//            }
+//        });
     }
 
 
