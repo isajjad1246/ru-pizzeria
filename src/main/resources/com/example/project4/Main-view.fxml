@@ -12,14 +12,14 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <AnchorPane fx:id="chicagoStyle" prefHeight="495.0" prefWidth="629.0">
+      <AnchorPane prefHeight="495.0" prefWidth="629.0">
          <children>
             <Label layoutX="227.0" layoutY="14.0" text="RU Pizzeria">
                <font>
                   <Font size="32.0" />
                </font>
             </Label>
-            <Button layoutX="250.0" layoutY="82.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Chicago Style" />
+            <Button fx:id="chicagoStyle" layoutX="250.0" layoutY="82.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Chicago Style" />
             <Button fx:id="nyStyle" layoutX="250.0" layoutY="139.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="New York Style" />
             <Button fx:id="currOrderButton" layoutX="250.0" layoutY="188.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Current Order" />
             <Button fx:id="storeOrderButton" layoutX="250.0" layoutY="247.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="Store Orders" />

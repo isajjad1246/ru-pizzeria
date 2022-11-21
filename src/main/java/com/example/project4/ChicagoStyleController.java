@@ -66,5 +66,10 @@ public class ChicagoStyleController implements Intializable{
 //        sizeBox1.setItems(size);
     }
 
+    @FXML
+    public void deluxeFlavor(){
+        //
+    }
+
 
 }
