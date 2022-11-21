@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
@@ -12,6 +13,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Intializable{
+
+    @FXML
+    private ListView <String> toppingsList = new ListView<>();
 
     @FXML
     private ComboBox<String> addToppings1 = new ComboBox <String> ();
@@ -43,7 +47,13 @@ public class ChicagoStyleController implements Intializable{
         String sizeString = sizeBox1.getSelectionModel().getSelectedItem().toString();
     }
 
+//    @FXML
+//    void selectToppings(ActionEvent event){
+//        String toppingsString = toppingsBox1.getSelectionModel().getSelectedItem().toString();
+//
+//    }
 
+    String[] food = {"Sausage", "Pepperoni", "green pepper", "onion", "mushroom", "BBQ Chicken", "provolone", "cheddar", "beef", "ham", ""};
     @Override
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
@@ -51,6 +61,9 @@ public class ChicagoStyleController implements Intializable{
 
         ObservableList<String> size = FXCollections.observableArrayList("small", "medium", "large");
         sizeBox1.setItems(size);
+
+//        ObservableList<String> toppings = FXCollections.observableArrayList("small", "medium", "large");
+//        sizeBox1.setItems(size);
     }
 
 
