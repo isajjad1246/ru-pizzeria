@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -92,6 +93,11 @@ public class NewYorkStyleController implements Initializable {
     String[] NYView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
     //String currentViewItem;
 
+    Image deluxeNY = new Image("ny_deluxe.png");
+    Image bbqNY = new Image("ny_bbq.png");
+    Image meatzzaNY = new Image("ny_meatzza.png");
+    Image byoNY = new Image("ny_byo.png");
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -121,6 +127,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.BROOKLYN);
+            imageView2.setImage(deluxeNY);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
@@ -132,6 +139,8 @@ public class NewYorkStyleController implements Initializable {
             deluxe.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(deluxe.price()));
         }
+
+
     }
     @FXML
     public void BBQChickenFlavor(){
@@ -143,6 +152,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.THIN);
+            imageView2.setImage(bbqNY);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
@@ -166,6 +176,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.HAND_TOSSED);
+            imageView2.setImage(meatzzaNY);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
@@ -188,6 +199,7 @@ public class NewYorkStyleController implements Initializable {
         //display price- increase every time topping is added
         if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.HAND_TOSSED);
+            imageView2.setImage(byoNY);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);
