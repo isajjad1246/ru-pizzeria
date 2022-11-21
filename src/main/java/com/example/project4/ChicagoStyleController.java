@@ -50,18 +50,18 @@ public class ChicagoStyleController implements Initializable {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
             imageView2.setImage(deluxeImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
             imageView2.setImage(bbqImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
         }
         if(flavorString.equalsIgnoreCase("Meatzza")){
             imageView2.setImage(meatzzaImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
         }
         if(flavorString.equalsIgnoreCase("BYO")){
             imageView2.setImage(byoImage);
