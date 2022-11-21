@@ -49,8 +49,8 @@ public abstract class Pizza implements Customizable {
         for (int i = 0; i < toppings.size(); i++){
             result += toppings.get(i) + ", ";
         }
-        result += "\nCrust Type: " + crust.toString();
-        result += "\nSize: " + size.toString();
+        result += "; Crust Type: " + crust.toString();
+        result += "; Size: " + size.toString();
         return result;
     }
 
