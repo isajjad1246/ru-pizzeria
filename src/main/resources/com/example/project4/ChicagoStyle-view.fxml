@@ -28,8 +28,8 @@
                   <TextArea fx:id="priceBox" layoutX="53.0" layoutY="452.0" prefHeight="17.0" prefWidth="137.0" />
                   <ComboBox fx:id="flavorBox1" layoutX="180.0" layoutY="77.0" onAction="#selectFlavor" onMouseClicked="#selectFlavor" prefHeight="26.0" prefWidth="150.0" />
                   <ListView fx:id="toppingsList" layoutX="14.0" layoutY="194.0" prefHeight="204.0" prefWidth="137.0" />
-                  <Button fx:id="addToppings" layoutX="157.0" layoutY="227.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" text="&gt;&gt;" />
-                  <Button fx:id="removeToppings" layoutX="157.0" layoutY="260.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" text=" &lt;&lt;" />
+                  <Button fx:id="addToppings" layoutX="157.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#addButton" prefHeight="26.0" prefWidth="53.0" text="&gt;&gt;" />
+                  <Button fx:id="removeToppings" layoutX="157.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#removeButton" prefHeight="26.0" prefWidth="53.0" text=" &lt;&lt;" />
                   <ListView fx:id="displayToppings" layoutX="218.0" layoutY="192.0" prefHeight="204.0" prefWidth="168.0" />
                   <Button fx:id="addOrderButton" layoutX="269.0" layoutY="456.0" mnemonicParsing="false" text="Add to Order" />
                </children></AnchorPane>

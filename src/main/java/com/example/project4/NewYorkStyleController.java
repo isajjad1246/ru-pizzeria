@@ -6,15 +6,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class NewYorkStyleController implements Initializable {
 
-    @FXML
-    private TextArea priceBox;
     @FXML
     private ListView <String> availableToppings = new ListView<>();
     @FXML
@@ -59,7 +59,7 @@ public class NewYorkStyleController implements Initializable {
 //    }
 
     @FXML
-    void addButton(ActionEvent event){
+    void addButton(MouseEvent event){
         if(availableToppings.getItems().size() >= 7){
             ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
@@ -79,7 +79,7 @@ public class NewYorkStyleController implements Initializable {
     }
 
     @FXML
-    void removeButton(ActionEvent event){
+    void removeButton(MouseEvent event){
         String availableItem = availableToppings.getSelectionModel().getSelectedItem();
         availableToppings.getItems().remove(availableItem);
         displayToppings.getItems().add(availableItem);
@@ -92,6 +92,11 @@ public class NewYorkStyleController implements Initializable {
 
     String[] NYView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
     //String currentViewItem;
+
+    Image deluxeNY = new Image("ny_deluxe.png");
+    Image bbqNY = new Image("ny_bbq.png");
+    Image meatzzaNY = new Image("ny_meatzza.png");
+    Image byoNY = new Image("ny_byo.png");
 
 
     @Override
@@ -120,6 +125,22 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
+        if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
+            deluxe.setCrust(Crust.BROOKLYN);
+            imageView2.setImage(deluxeNY);
+        }
+        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+            deluxe.setSize(Size.SMALL);
+            priceBox2.setText(String.valueOf(deluxe.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+            deluxe.setSize(Size.MEDIUM);
+            priceBox2.setText(String.valueOf(deluxe.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+            deluxe.setSize(Size.LARGE);
+            priceBox2.setText(String.valueOf(deluxe.price()));
+        }
+
+
     }
     @FXML
     public void BBQChickenFlavor(){
@@ -129,6 +150,20 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago bbqchicken toppings
         //when add pizza is clicked, create pizza.bbqchicken() type
         //display price
+        if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
+            bbq.setCrust(Crust.THIN);
+            imageView2.setImage(bbqNY);
+        }
+        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+            bbq.setSize(Size.SMALL);
+            priceBox2.setText(String.valueOf(bbq.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+            bbq.setSize(Size.MEDIUM);
+            priceBox2.setText(String.valueOf(bbq.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+            bbq.setSize(Size.LARGE);
+            priceBox2.setText(String.valueOf(bbq.price()));
+        }
     }
 
     @FXML
@@ -139,6 +174,20 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
+        if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
+            meatzza.setCrust(Crust.HAND_TOSSED);
+            imageView2.setImage(meatzzaNY);
+        }
+        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+            meatzza.setSize(Size.SMALL);
+            priceBox2.setText(String.valueOf(meatzza.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+            meatzza.setSize(Size.MEDIUM);
+            priceBox2.setText(String.valueOf(meatzza.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+            meatzza.setSize(Size.LARGE);
+            priceBox2.setText(String.valueOf(meatzza.price()));
+        }
     }
     @FXML
     public void byoFlavor(){
@@ -148,5 +197,19 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view empty but changes on button click
         //when add pizza is clicked, create pizza.buildyourown() type
         //display price- increase every time topping is added
+        if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
+            byo.setCrust(Crust.HAND_TOSSED);
+            imageView2.setImage(byoNY);
+        }
+        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+            byo.setSize(Size.SMALL);
+            priceBox2.setText(String.valueOf(byo.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+            byo.setSize(Size.MEDIUM);
+            priceBox2.setText(String.valueOf(byo.price()));
+        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+            byo.setSize(Size.LARGE);
+            priceBox2.setText(String.valueOf(byo.price()));
+        }
     }
 }
