@@ -6,15 +6,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Intializable{
+    PizzaFactory pf = new ChicagoPizza();
+    Pizza deluxe = pf.createDeluxe();
+    Pizza bbq = pf.createBBQChicken();
+    Pizza meatzza = pf.createMeatzza();
+    Pizza byo = pf.createBuildYourOwn();
 
     @FXML
     private ListView <String> toppingsList = new ListView<>();
@@ -60,12 +63,34 @@ public class ChicagoStyleController implements Intializable{
 
     @FXML
     void addButton(ActionEvent event){
-
+        if(toppingsList.getItems().size() >= 7){
+            ButtonType ButtonType = null;
+            Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
+            alarm.setHeaderText("This is the maximum number of toppings");
+            alarm.show();
+        }
+        else{
+            String availableItem = displayToppings.getSelectionModel().getSelectedItem();
+            displayToppings.getItems().remove(availableItem);
+            toppingsList.getItems().add(availableItem);
+            String result = flavorBox1.getSelectionModel().getSelectedItem();
+            if(result.equals("Build Your Own")){
+                byo.add(availableItem);
+                priceBox.setText(Double.toString(byo.price()));
+            }
+        }
     }
 
     @FXML
     void removeButton(ActionEvent event){
-
+        String availableItem = toppingsList.getSelectionModel().getSelectedItem();
+        toppingsList.getItems().remove(availableItem);
+        displayToppings.getItems().add(availableItem);
+        String result = flavorBox1.getSelectionModel().getSelectedItem();
+        if(result.equals("Build Your Own")){
+            byo.remove(availableItem);
+            priceBox.setText(Double.toString(byo.price()));
+        }
     }
 
     String[] ChicagoView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
@@ -76,6 +101,8 @@ public class ChicagoStyleController implements Intializable{
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
         flavorBox1.setItems(flavorList);
+
+        flavorBox1.getSelectionModel().select("Build Your Own");
 
         ObservableList<String> size = FXCollections.observableArrayList("small", "medium", "large");
         sizeBox1.setItems(size);
