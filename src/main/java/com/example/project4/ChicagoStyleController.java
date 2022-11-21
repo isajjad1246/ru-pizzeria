@@ -1,5 +1,7 @@
 package com.example.project4;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +20,9 @@ public class ChicagoStyleController implements Intializable{
     private ListView <String> toppingsList = new ListView<>();
 
     @FXML
+    private ListView <String> displayToppings = new ListView<>();
+
+    @FXML
     private ComboBox<String> addToppings1 = new ComboBox <String> ();
 
     @FXML
@@ -33,7 +38,7 @@ public class ChicagoStyleController implements Intializable{
     private ComboBox<String> toppingsBox1 = new ComboBox <String> ();
 
     @FXML
-    private TextArea totalBox1;
+    private TextArea priceBox;
 
 
     @FXML
@@ -53,7 +58,10 @@ public class ChicagoStyleController implements Intializable{
 //
 //    }
 
-    String[] food = {"Sausage", "Pepperoni", "green pepper", "onion", "mushroom", "BBQ Chicken", "provolone", "cheddar", "beef", "ham", ""};
+    String[] ChicagoView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
+    //String currentViewItem;
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
@@ -62,8 +70,13 @@ public class ChicagoStyleController implements Intializable{
         ObservableList<String> size = FXCollections.observableArrayList("small", "medium", "large");
         sizeBox1.setItems(size);
 
-//        ObservableList<String> toppings = FXCollections.observableArrayList("small", "medium", "large");
-//        sizeBox1.setItems(size);
+        toppingsList.getItems().addAll(ChicagoView);
+        toppingsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+
+            }
+        });
     }
 
     @FXML
