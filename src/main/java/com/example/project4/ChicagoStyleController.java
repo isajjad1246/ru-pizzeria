@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Intializable{
 
+
     @FXML
     private ListView <String> toppingsList = new ListView<>();
 
@@ -93,6 +94,7 @@ public class ChicagoStyleController implements Intializable{
     public void deluxeFlavor(){
         //size button
         //set crust option to deep dish
+
         //1st list view and add remove topping buttons disabled
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type

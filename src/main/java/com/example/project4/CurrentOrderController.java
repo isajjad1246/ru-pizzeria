@@ -1,5 +1,7 @@
 package com.example.project4;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -8,6 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 public class CurrentOrderController {
+
+    private Order currOrder = new Order();
+    private ObservableList<Pizza> pizzaList = FXCollections.observableArrayList();
 
     @FXML
     private TextField orderNum;
@@ -34,8 +39,16 @@ public class CurrentOrderController {
     private Button clearOrder;
 
     //methods for actions and stuff
+
+
     @FXML
     public void displayOrderNum(){
+        orderNum.setText(String.valueOf(currOrder.orderNumber));
 
+    }
+    @FXML
+    public void displayOrder(){
+        pizzaList.add(currOrder.)
+        listViewOrders.setItems();
     }
 }
