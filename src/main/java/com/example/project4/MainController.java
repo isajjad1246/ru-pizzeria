@@ -14,13 +14,5 @@ public class MainController {
     }
 
     @FXML
-    private RadioButton chicagoStyleButton;
 
-    @FXML
-    private RadioButton nyStyleButton;
-
-    public void chicagoButtonClick(){
-        //go to chicagostyle view
-
-    }
 }
