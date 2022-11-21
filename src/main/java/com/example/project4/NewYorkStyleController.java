@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,7 +60,7 @@ public class NewYorkStyleController implements Initializable {
 //    }
 
     @FXML
-    void addButton(ActionEvent event){
+    void addButton(MouseEvent event){
         if(availableToppings.getItems().size() >= 7){
             ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
@@ -79,7 +80,7 @@ public class NewYorkStyleController implements Initializable {
     }
 
     @FXML
-    void removeButton(ActionEvent event){
+    void removeButton(MouseEvent event){
         String availableItem = availableToppings.getSelectionModel().getSelectedItem();
         availableToppings.getItems().remove(availableItem);
         displayToppings.getItems().add(availableItem);
