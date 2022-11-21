@@ -40,22 +40,28 @@ public class ChicagoStyleController implements Initializable {
     private ComboBox<String> flavorBox;
     @FXML
     private ImageView imageView2;
-    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe.png"));
-    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq.png"));
-    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza.png"));
-    private Image byoImage = new Image(getClass().getResourceAsStream("byo.png"));
+    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
+    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-chicago.png"));
+    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
+    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
 
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
             imageView2.setImage(deluxeImage);
+            addButton.setDisable(false);
+            removeButton.setDisable(false);
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
             imageView2.setImage(bbqImage);
+            addButton.setDisable(false);
+            removeButton.setDisable(false);
         }
         if(flavorString.equalsIgnoreCase("Meatzza")){
             imageView2.setImage(meatzzaImage);
+            addButton.setDisable(false);
+            removeButton.setDisable(false);
         }
         if(flavorString.equalsIgnoreCase("BYO")){
             imageView2.setImage(byoImage);
