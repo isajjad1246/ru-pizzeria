@@ -1,11 +1,15 @@
 package com.example.project4;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class MainController {
+    public Button nyStyle;
+    public Button currOrderButton;
+    public Button storeOrderButton;
     @FXML
-    private Label welcomeText; //hjhnjbghgcfgcgv
+    private Label welcomeText;
 
     @FXML
     protected void onHelloButtonClick() {
