@@ -56,6 +56,6 @@ public class CurrentOrderController {
     //button to add order to store orders
     @FXML
     public void addToStoreOrder(){
-
+        //add the order to store order
     }
 }
