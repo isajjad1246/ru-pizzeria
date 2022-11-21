@@ -103,10 +103,10 @@ public class ChicagoStyleController implements Intializable{
 
     String[] ChicagoView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
     //String currentViewItem;
-    Image chicagoDelux = new Image("chicago_deluxe.png");
-    Image chicagoBBQ = new Image("chicago_bbq.png");
-    Image chicagoMeatzza = new Image("chicago_meatzza.png");
-    Image chicagoBYO = new Image("chicago_byo.png");
+    Image deluxeImage = new Image("deluxe.png");
+    Image bbqImage = new Image("bbq.png");
+    Image meatzzaImage = new Image("meatzza.png");
+    Image byoImage = new Image("byo.png");
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
