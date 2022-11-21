@@ -40,6 +40,8 @@ public class NewYorkStyleController implements Initializable {
     private ComboBox<String> flavorBox;
     @FXML
     private ImageView imageView2;
+
+
     private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-ny.png"));
     private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-ny.png"));
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-ny.png"));
