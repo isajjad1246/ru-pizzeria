@@ -17,7 +17,7 @@
             <ComboBox fx:id="sizeBox2" layoutX="175.0" layoutY="149.0" prefWidth="150.0" />
             <Label layoutX="26.0" layoutY="497.0" text="Price:" />
             <TextArea fx:id="priceBox2" layoutX="70.0" layoutY="486.0" prefHeight="38.0" prefWidth="150.0" />
-            <ListView layoutX="89.0" layoutY="234.0" prefHeight="211.0" prefWidth="161.0" />
+            <ListView fx:id="availableToppings" layoutX="89.0" layoutY="234.0" prefHeight="211.0" prefWidth="161.0" />
             <Button fx:id="addButton" layoutX="305.0" layoutY="252.0" mnemonicParsing="false" text="&gt;&gt;&gt;" />
             <Button fx:id="removeButton" layoutX="305.0" layoutY="313.0" mnemonicParsing="false" text="&lt;&lt;&lt;" />
             <Button fx:id="addToOrderButton" layoutX="407.0" layoutY="493.0" mnemonicParsing="false" text="Add to Order" />
@@ -26,6 +26,6 @@
             <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="170.0" layoutX="451.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <ListView layoutX="401.0" layoutY="229.0" prefHeight="211.0" prefWidth="161.0" />
+      <ListView fx:id="displayToppings" layoutX="401.0" layoutY="229.0" prefHeight="211.0" prefWidth="161.0" />
    </children>
 </AnchorPane>
