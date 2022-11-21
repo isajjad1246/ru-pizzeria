@@ -82,6 +82,7 @@ public class ChicagoStyleController implements Intializable{
             String result = flavorBox1.getSelectionModel().getSelectedItem();
             if(result.equals("Build Your Own")){
                 byo.add(availableItem);
+                //byo.setPrice() = byo.price() + 1.49;
                 priceBox.setText(Double.toString(byo.price()));
             }
         }
@@ -136,12 +137,14 @@ public class ChicagoStyleController implements Intializable{
             deluxe.setCrust(Crust.DEEP_DISH);
         }
         if(sizeBox1.getSelectionModel().getSelectedItem() == "small"){
-            //deluxe.setSize()
+            deluxe.setSize(Size.SMALL);
             priceBox.setText(String.valueOf(deluxe.price()));
         }else if(sizeBox1.getSelectionModel().getSelectedItem() == "medium"){
-
+            deluxe.setSize(Size.MEDIUM);
+            priceBox.setText(String.valueOf(deluxe.price()));
         }else if(sizeBox1.getSelectionModel().getSelectedItem() == "large"){
-
+            deluxe.setSize(Size.LARGE);
+            priceBox.setText(String.valueOf(deluxe.price()));
         }
     }
     @FXML
@@ -154,6 +157,16 @@ public class ChicagoStyleController implements Intializable{
         //display price
         if(flavorBox1.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.PAN);
+        }
+        if(sizeBox1.getSelectionModel().getSelectedItem() == "small"){
+            bbq.setSize(Size.SMALL);
+            priceBox.setText(String.valueOf(bbq.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "medium"){
+            bbq.setSize(Size.MEDIUM);
+            priceBox.setText(String.valueOf(bbq.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "large"){
+            bbq.setSize(Size.LARGE);
+            priceBox.setText(String.valueOf(bbq.price()));
         }
     }
 
@@ -168,6 +181,16 @@ public class ChicagoStyleController implements Intializable{
         if(flavorBox1.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
         }
+        if(sizeBox1.getSelectionModel().getSelectedItem() == "small"){
+            meatzza.setSize(Size.SMALL);
+            priceBox.setText(String.valueOf(meatzza.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "medium"){
+            meatzza.setSize(Size.MEDIUM);
+            priceBox.setText(String.valueOf(meatzza.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "large"){
+            meatzza.setSize(Size.LARGE);
+            priceBox.setText(String.valueOf(meatzza.price()));
+        }
     }
     @FXML
     public void byoFlavor(){
@@ -179,6 +202,16 @@ public class ChicagoStyleController implements Intializable{
         //display price- increase every time topping is added
         if(flavorBox1.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.PAN);
+        }
+        if(sizeBox1.getSelectionModel().getSelectedItem() == "small"){
+            byo.setSize(Size.SMALL);
+            priceBox.setText(String.valueOf(byo.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "medium"){
+            byo.setSize(Size.MEDIUM);
+            priceBox.setText(String.valueOf(byo.price()));
+        }else if(sizeBox1.getSelectionModel().getSelectedItem() == "large"){
+            byo.setSize(Size.LARGE);
+            priceBox.setText(String.valueOf(byo.price()));
         }
 
     }
