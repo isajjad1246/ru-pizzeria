@@ -10,6 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 public class CurrentOrderController {
+    private ChicagoStyleController chicagoStyleController;
+    private NewYorkStyleController newYorkStyleController;
 
     private Order currOrder = new Order();
     private ObservableList<Pizza> pizzaList = FXCollections.observableArrayList();
