@@ -1,12 +1,31 @@
 package com.example.project4;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
-public class NewYorkStyleController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class NewYorkStyleController implements Initializable {
+
+    @FXML
+    private TextArea priceBox;
+    @FXML
+    private ListView <String> availableToppings = new ListView<>();
+    @FXML
+    private ListView <String> displayToppings = new ListView<>();
+    PizzaFactory pf = new NYPizza();
+    Pizza deluxe = pf.createDeluxe();
+    Pizza bbq = pf.createBBQChicken();
+    Pizza meatzza = pf.createMeatzza();
+    Pizza byo = pf.createBuildYourOwn();
+
+
     @FXML
     private ComboBox<String> sizeBox2;
     @FXML
@@ -22,6 +41,77 @@ public class NewYorkStyleController {
     @FXML
     private ImageView imageView2;
 
+    @FXML
+    void selectFlavor(ActionEvent event) {
+        String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
+
+    }
+
+    @FXML
+    void selectSize(ActionEvent event){
+        String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
+    }
+
+//    @FXML
+//    void selectToppings(ActionEvent event){
+//        String toppingsString = toppingsBox1.getSelectionModel().getSelectedItem().toString();
+//
+//    }
+
+    @FXML
+    void addButton(ActionEvent event){
+        if(availableToppings.getItems().size() >= 7){
+            ButtonType ButtonType = null;
+            Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
+            alarm.setHeaderText("This is the maximum number of toppings");
+            alarm.show();
+        }
+        else{
+            String availableItem = displayToppings.getSelectionModel().getSelectedItem();
+            displayToppings.getItems().remove(availableItem);
+            availableToppings.getItems().add(availableItem);
+            String result = flavorBox.getSelectionModel().getSelectedItem();
+            if(result.equals("Build Your Own")){
+                byo.add(availableItem);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+        }
+    }
+
+    @FXML
+    void removeButton(ActionEvent event){
+        String availableItem = availableToppings.getSelectionModel().getSelectedItem();
+        availableToppings.getItems().remove(availableItem);
+        displayToppings.getItems().add(availableItem);
+        String result = flavorBox.getSelectionModel().getSelectedItem();
+        if(result.equals("Build Your Own")){
+            byo.remove(availableItem);
+            priceBox2.setText(Double.toString(byo.price()));
+        }
+    }
+
+    String[] NYView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
+    //String currentViewItem;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
+        flavorBox.setItems(flavorList);
+
+        flavorBox.getSelectionModel().select("Build Your Own");
+
+        ObservableList<String> size = FXCollections.observableArrayList("small", "medium", "large");
+        sizeBox2.setItems(size);
+
+        availableToppings.getItems().addAll(NYView);
+//        toppingsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+//
+//            }
+//        });
+    }
     @FXML
     public void deluxeFlavor(){
         //size button

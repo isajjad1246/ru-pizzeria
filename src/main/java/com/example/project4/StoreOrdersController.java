@@ -1,5 +1,6 @@
 package com.example.project4;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -17,4 +18,8 @@ public class StoreOrdersController {
     public Button cancelOrderButton;
     @FXML
     public Button exportStoreOrdersButton;
+
+    public void orderDropDown(ActionEvent actionEvent) {
+
+    }
 }
