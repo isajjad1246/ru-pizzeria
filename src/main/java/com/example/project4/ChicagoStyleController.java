@@ -89,5 +89,10 @@ public class ChicagoStyleController implements Intializable{
 //        });
     }
 
+    @FXML
+    public void deluxeFlavor(){
+        //
+    }
+
 
 }
