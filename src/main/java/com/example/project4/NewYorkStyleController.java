@@ -1,8 +1,27 @@
 package com.example.project4;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 
 public class NewYorkStyleController {
+    @FXML
+    private ComboBox<String> sizeBox2;
+    @FXML
+    private TextArea priceBox2;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button removeButton;
+    @FXML
+    private Button addToOrderButton;
+    @FXML
+    private ComboBox<String> flavorBox;
+    @FXML
+    private ImageView imageView2;
+
     @FXML
     public void deluxeFlavor(){
         //size button
