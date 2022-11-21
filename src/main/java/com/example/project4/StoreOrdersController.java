@@ -8,6 +8,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 public class StoreOrdersController {
+
+    private StoreOrders storeOrder = new StoreOrders();
     @FXML
     private ComboBox <Integer> orderNumBox;
     @FXML
@@ -18,6 +20,7 @@ public class StoreOrdersController {
     public Button cancelOrderButton;
     @FXML
     public Button exportStoreOrdersButton;
+
 
     public void orderDropDown(ActionEvent actionEvent) {
 

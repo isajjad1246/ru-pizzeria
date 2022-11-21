@@ -21,6 +21,9 @@ public abstract class Pizza implements Customizable {
     public Size getSize(){
         return size;
     }
+    public void setSize(Size size1){
+        this.size = size1;
+    }
 
     public double getPrice(){
         return price();
