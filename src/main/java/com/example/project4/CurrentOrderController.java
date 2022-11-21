@@ -41,14 +41,21 @@ public class CurrentOrderController {
     //methods for actions and stuff
 
 
+    //every time pizza is set to order, this is called and updated
     @FXML
-    public void displayOrderNum(){
+    public void display(){
         orderNum.setText(String.valueOf(currOrder.orderNumber));
+        listViewOrders.setItems((ObservableList) currOrder.pizzaOrder);
+        subtotal.setText(String.valueOf(currOrder.orderCost));
+        salesTax.setText(String.valueOf(currOrder.orderCost*.0625));
+        currOrder.orderCost = currOrder.orderCost*1.0625;
+        orderTotal.setText(String.valueOf(currOrder.orderCost));
 
     }
+
+    //button to add order to store orders
     @FXML
-    public void displayOrder(){
-        pizzaList.add(currOrder.)
-        listViewOrders.setItems();
+    public void addToStoreOrder(){
+
     }
 }

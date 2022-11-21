@@ -66,6 +66,8 @@ public class MainController {
         primaryStage.setScene(scene);
         primaryStage.initModality(Modality.NONE);
         primaryStage.show();
+
+        //
     }
 
     @FXML
