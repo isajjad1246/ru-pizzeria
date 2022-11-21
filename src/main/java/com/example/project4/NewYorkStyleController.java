@@ -93,10 +93,10 @@ public class NewYorkStyleController implements Initializable {
     String[] NYView = {Topping.SAUSAGE.toString(), Topping.PEPPERONI.toString(), Topping.GREEN_PEPPER.toString(), Topping.ONION.toString(), Topping.MUSHROOM.toString(), Topping.BBQ_CHICKEN.toString(), Topping.PROVOLONE.toString(), Topping.CHEDDAR.toString(), Topping.BEEF.toString(), Topping.HAM.toString(), Topping.PINEAPPLE.toString(), Topping.JALAPENO.toString(), Topping.OLIVES.toString()};
     //String currentViewItem;
 
-    Image deluxeNY = new Image("ny_deluxe.png");
-    Image bbqNY = new Image("ny_bbq.png");
-    Image meatzzaNY = new Image("ny_meatzza.png");
-    Image byoNY = new Image("ny_byo.png");
+    Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe.png"));
+    Image bbqImage = new Image(getClass().getResourceAsStream("bbq.png"));
+    Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza.png"));
+    Image byoImage = new Image(getClass().getResourceAsStream("byo.png"));
 
 
     @Override
@@ -127,7 +127,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.BROOKLYN);
-            imageView2.setImage(deluxeNY);
+            imageView2.setImage(deluxeImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
@@ -152,7 +152,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.THIN);
-            imageView2.setImage(bbqNY);
+            imageView2.setImage(bbqImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
@@ -176,7 +176,7 @@ public class NewYorkStyleController implements Initializable {
         //display price
         if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.HAND_TOSSED);
-            imageView2.setImage(meatzzaNY);
+            imageView2.setImage(meatzzaImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
@@ -199,7 +199,7 @@ public class NewYorkStyleController implements Initializable {
         //display price- increase every time topping is added
         if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.HAND_TOSSED);
-            imageView2.setImage(byoNY);
+            imageView2.setImage(byoImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);
