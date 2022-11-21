@@ -14,7 +14,7 @@
          <children>
             <Label layoutX="57.0" layoutY="87.0" text="Select Pizza Flavor:" />
             <Label layoutX="70.0" layoutY="153.0" text="Select Size:" />
-            <ComboBox fx:id="sizeBox2" layoutX="175.0" layoutY="149.0" prefWidth="150.0" />
+            <ComboBox fx:id="sizeBox2" layoutX="175.0" layoutY="149.0" onAction="#selectSize" prefWidth="150.0" />
             <Label layoutX="26.0" layoutY="497.0" text="Price:" />
             <TextArea fx:id="priceBox2" layoutX="70.0" layoutY="486.0" prefHeight="38.0" prefWidth="150.0" />
             <ListView fx:id="availableToppings" layoutX="89.0" layoutY="234.0" prefHeight="211.0" prefWidth="161.0" />
@@ -22,7 +22,7 @@
             <Button fx:id="removeButton" layoutX="305.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#removeButton" text="&lt;&lt;&lt;" />
             <Button fx:id="addToOrderButton" layoutX="407.0" layoutY="493.0" mnemonicParsing="false" text="Add to Order" />
             <Label layoutX="264.0" layoutY="40.0" text="New York Style Pizza:" />
-            <ComboBox fx:id="flavorBox" layoutX="175.0" layoutY="83.0" prefWidth="150.0" />
+            <ComboBox fx:id="flavorBox" layoutX="175.0" layoutY="83.0" onAction="#selectFlavor" prefWidth="150.0" />
             <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="170.0" layoutX="451.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
