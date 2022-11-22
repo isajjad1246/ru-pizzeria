@@ -1,4 +1,7 @@
 package com.example.project4;
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 
 public enum Crust{
     DEEP_DISH("Deep dish"),
@@ -10,10 +13,17 @@ public enum Crust{
 
     private final String crust_type;
 
+    /**
+     * Setter method for pizza crust
+     * */
     private Crust(String crust_type){
         this.crust_type = crust_type;
     }
 
+    /**
+     * toString method to cast crust type to string
+     * @return String
+     * */
     @Override
     public String toString() {
         return this.crust_type;

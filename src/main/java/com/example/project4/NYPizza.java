@@ -1,6 +1,13 @@
 package com.example.project4;
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 
 public class NYPizza implements PizzaFactory{
+    /**
+     * Method to create ny deluxe pizza
+     * @return Pizza
+     * */
     public Pizza createDeluxe(){
         //body
         Deluxe deluxePizza = new Deluxe();
@@ -8,6 +15,10 @@ public class NYPizza implements PizzaFactory{
         deluxePizza.setCrust(Crust.BROOKLYN);
         return deluxePizza;
     }
+    /**
+     * Method to create ny meatzza
+     * @return Pizza
+     * */
     public Pizza createMeatzza(){
         //body
         Meatzza meatzzaPizza = new Meatzza();
@@ -15,6 +26,10 @@ public class NYPizza implements PizzaFactory{
         meatzzaPizza.setCrust(Crust.THIN);
         return meatzzaPizza;
     }
+    /**
+     * Method to create ny bbq chicken pizza
+     * @return Pizza
+     * */
     public Pizza createBBQChicken(){
         //body
         BBQChicken bbqPizza = new BBQChicken();
@@ -23,6 +38,10 @@ public class NYPizza implements PizzaFactory{
         return bbqPizza;
 
     }
+    /**
+     * Method to create ny build your own pizza
+     * @return Pizza
+     * */
     public Pizza createBuildYourOwn(){
         //body
         BuildYourOwn byoPizza = new BuildYourOwn();

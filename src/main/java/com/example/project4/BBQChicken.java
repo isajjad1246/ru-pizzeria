@@ -1,7 +1,14 @@
 package com.example.project4;
 
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
+
 public class BBQChicken extends Pizza{
 
+    /**
+    Contructor to initialize bbq chicken type
+    * */
     public BBQChicken(){
         getToppings().add(Topping.BBQ_CHICKEN);
         getToppings().add(Topping.GREEN_PEPPER);
@@ -9,6 +16,10 @@ public class BBQChicken extends Pizza{
         getToppings().add(Topping.CHEDDAR);
     }
 
+    /**
+     * Sets price of bbq chicken pizza
+     * @return double
+     * */
     public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){

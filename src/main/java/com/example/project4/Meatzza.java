@@ -1,6 +1,11 @@
 package com.example.project4;
-
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 public class Meatzza extends Pizza{
+    /**
+     * constructor to initialize meatzza pizza
+     * */
     public Meatzza(){
         getToppings().add(Topping.SAUSAGE);
         getToppings().add(Topping.PEPPERONI);
@@ -8,6 +13,10 @@ public class Meatzza extends Pizza{
         getToppings().add(Topping.HAM);
     }
 
+    /**
+     * method to give price of meatzza pizza
+     * @return double
+     * */
      public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){

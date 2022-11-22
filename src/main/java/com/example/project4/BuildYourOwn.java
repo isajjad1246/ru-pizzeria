@@ -1,7 +1,14 @@
 package com.example.project4;
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 
 public class BuildYourOwn extends Pizza{
     //add toppings in controller when they are added
+    /**
+     * Method to set price of build your own pizza
+     * @return double
+     * */
     public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){
