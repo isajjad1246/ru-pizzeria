@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Deluxe extends Pizza{
 
     //sets toppings
-    public void setToppings(){
+    public Deluxe(){
         getToppings().add(Topping.SAUSAGE);
         getToppings().add(Topping.PEPPERONI);
         getToppings().add(Topping.GREEN_PEPPER);

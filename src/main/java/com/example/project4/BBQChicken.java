@@ -2,7 +2,7 @@ package com.example.project4;
 
 public class BBQChicken extends Pizza{
 
-    public void setToppings(){
+    public BBQChicken(){
         getToppings().add(Topping.BBQ_CHICKEN);
         getToppings().add(Topping.GREEN_PEPPER);
         getToppings().add(Topping.PROVOLONE);
