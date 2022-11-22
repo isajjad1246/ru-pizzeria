@@ -24,7 +24,7 @@ public class Deluxe extends Pizza{
         else{
             result = 18.99;
         }
-        return result;
+        return (double) Math.round(result*100)/100;
     }
 
     //crust- figure out cuz depends on chicago or ny

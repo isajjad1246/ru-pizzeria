@@ -168,4 +168,9 @@ public class MainController {
         }
         stage.show();
     }
+
+    //method to add pizza to order
+    public void addPizza(Pizza pizza){
+        order.add(pizza);
+    }
 }

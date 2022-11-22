@@ -5,15 +5,15 @@ public class BuildYourOwn extends Pizza{
     public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){
-            result = 8.99;
+            result = 8.99 + (1.59*super.getToppings().size());
         }
         else if (getSize() == Size.MEDIUM){
-            result = 10.99;
+            result = 10.99 + (1.59*super.getToppings().size());
         }
         else{
-            result = 12.99;
+            result = 12.99 + (1.59*super.getToppings().size());
         }
-        return result;
+        return (double) Math.round(result*100)/100;
     }
     private double cost;
     public BuildYourOwn(){

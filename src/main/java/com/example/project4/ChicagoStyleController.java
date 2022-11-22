@@ -312,4 +312,9 @@ public class ChicagoStyleController implements Initializable {
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
     }
+
+    @FXML
+    public void addPizzaToOrder(){
+
+    }
 }

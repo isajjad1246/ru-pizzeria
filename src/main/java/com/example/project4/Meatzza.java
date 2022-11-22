@@ -19,6 +19,6 @@ public class Meatzza extends Pizza{
         else{
             result = 19.99;
         }
-        return result;
+         return (double) Math.round(result*100)/100;
     }
 }

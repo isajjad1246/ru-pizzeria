@@ -20,7 +20,7 @@ public class BBQChicken extends Pizza{
         else{
             result = 17.99;
         }
-        return result;
+        return (double) Math.round(result*100)/100;
     }
 
 }
