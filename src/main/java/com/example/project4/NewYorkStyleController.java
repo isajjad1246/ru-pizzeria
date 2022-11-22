@@ -52,21 +52,26 @@ public class NewYorkStyleController implements Initializable {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
             imageView2.setImage(deluxeImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
+            deluxeFlavor();
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
             imageView2.setImage(bbqImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
+            BBQChickenFlavor();
         }
         if(flavorString.equalsIgnoreCase("Meatzza")){
             imageView2.setImage(meatzzaImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            addButton.setDisable(true);
+            removeButton.setDisable(true);
+            meatzzaFlavor();
         }
         if(flavorString.equalsIgnoreCase("BYO")){
             imageView2.setImage(byoImage);
+            addButton.setDisable(false);
+            removeButton.setDisable(false);
         }
 
     }
@@ -74,6 +79,9 @@ public class NewYorkStyleController implements Initializable {
     @FXML
     void selectSize(ActionEvent event){
         String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
+        if (sizeString.equalsIgnoreCase(Size.SMALL.toString())){
+            //priceBox2.setText(Double.toString(byo.price()))
+        }
     }
 
 //    @FXML
@@ -145,6 +153,14 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
+
+        ObservableList<String> temp = FXCollections.observableArrayList();
+        for (int i = 0; i < deluxe.getToppings().size(); i++){
+            temp.add(deluxe.getToppings().get(i).toString());
+        }
+        displayToppings.setItems(temp);
+        System.out.println("in deluxe");
+
         if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.BROOKLYN);
             imageView2.setImage(deluxeImage);
@@ -152,6 +168,8 @@ public class NewYorkStyleController implements Initializable {
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(deluxe.price()));
+            System.out.println("price" + deluxe.price());
+
         }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
             deluxe.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(deluxe.price()));
@@ -170,6 +188,11 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago bbqchicken toppings
         //when add pizza is clicked, create pizza.bbqchicken() type
         //display price
+        ObservableList<String> temp = FXCollections.observableArrayList();
+        for (int i = 0; i < bbq.getToppings().size(); i++){
+            temp.add(bbq.getToppings().get(i).toString());
+        }
+        displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.THIN);
             imageView2.setImage(bbqImage);
@@ -194,6 +217,11 @@ public class NewYorkStyleController implements Initializable {
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
+        ObservableList<String> temp = FXCollections.observableArrayList();
+        for (int i = 0; i < meatzza.getToppings().size(); i++){
+            temp.add(meatzza.getToppings().get(i).toString());
+        }
+        displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.HAND_TOSSED);
             imageView2.setImage(meatzzaImage);

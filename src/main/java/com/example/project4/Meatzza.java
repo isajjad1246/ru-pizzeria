@@ -1,7 +1,7 @@
 package com.example.project4;
 
 public class Meatzza extends Pizza{
-    public void setToppings(){
+    public Meatzza(){
         getToppings().add(Topping.SAUSAGE);
         getToppings().add(Topping.PEPPERONI);
         getToppings().add(Topping.BEEF);
