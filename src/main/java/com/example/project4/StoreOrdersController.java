@@ -7,6 +7,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+/**
+ * @author Ifrah Sajjad, Reiya Dave
+ *
+ * Class for StoreOrdersController
+ *
+ * */
 public class StoreOrdersController {
     private CurrentOrderController currentOrderController;
 
@@ -24,9 +30,19 @@ public class StoreOrdersController {
 
     private MainController mainController; //controller for main view
 
+    /**
+     * Method for handling controllers for main view controller
+     * @param mainController
+     *
+     * */
     public void setMainController(MainController mainController){
         this.mainController = mainController;
     }
+    /**
+     * Method for handling orderDropDown
+     * @param actionEvent
+     *
+     * */
     public void orderDropDown(ActionEvent actionEvent) {
 
     }

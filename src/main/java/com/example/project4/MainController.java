@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author Ifrah Sajjad, Reiya Dave
+ * Controller for MainController
+ * */
 public class MainController {
 
     @FXML
@@ -36,18 +40,36 @@ public class MainController {
 
     private static final double WINDOW_LOCATION = 0;
 
+    /**
+     * Method for handling controllers for main view controller
+     * @param mainController
+     *
+     * */
     public void setMainController(MainController mainController){
         this.mainController = mainController;
     }
 
+    /**
+     * Method to add pizza to order
+     * @param pizza
+     * */
     public void addPizzaToOrder(Pizza pizza){
         order.add(pizza);
     }
 
+    /**
+     * Method to set the total cost
+     * @param amt
+     *
+     * */
     public void setCostTotal(double amt){
         this.pizzaTotal = amt;
     }
 
+    /**
+     * Method for adding orders
+     * @param amt
+     * */
     public void addingOrders(double amt){
         order.setOrderTotal(amt);
         orders.add(order);
@@ -55,23 +77,47 @@ public class MainController {
         this.order = new Order();
     }
 
+    /**
+     * Method for removing orders
+     * @param removesOrder
+     * @return boolean
+     * */
     public boolean removeOrder(Order removesOrder){
         return this.orders.remove(removesOrder);
     }
 
+
+    /**
+     * Method for removing an item from pizza
+     * @param removesOrder
+     * @return boolean
+     * */
     public boolean removeItem(Pizza removesOrder){
         return this.order.remove(removesOrder);
 
     }
 
+    /**
+     * Method for getting orders
+     * @return StoreOrders
+     * */
     public StoreOrders getOrders(){
         return this.orders;
     }
 
+    /**
+     * Method for getting order
+     * @return Order
+     * */
     public Order getOrder(){
         return this.order;
     }
 
+
+    /***
+     * Method for chicagoStyle Button
+     *
+     * */
     @FXML
     public void chicagoStyleClick() throws IOException {
         //open new window to chicago style view
@@ -89,6 +135,9 @@ public class MainController {
 
     }
 
+    /**
+     * Method for NY Style Button
+     * */
     @FXML
     public void nyStyleClick() throws IOException {
         //open new window to ny style view
@@ -105,6 +154,11 @@ public class MainController {
 
     }
 
+
+    /**
+     * Method for Current Order Button
+     *
+     * */
     @FXML
     public void currOrderClick() throws IOException {
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrder-view.fxml"));
@@ -122,6 +176,10 @@ public class MainController {
         load("CurrentOrder-view.fxml", "Current Order");
     }
 
+
+    /**
+     * Method for store order click
+     * */
     @FXML
     public void storeOrderClick() throws IOException {
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrders-view.fxml"));
@@ -138,6 +196,12 @@ public class MainController {
 
     }
 
+
+    /**
+     * Method for loading fxml file
+     * @param fxmlRoot
+     * @param stageTitle
+     * */
     private void load(String fxmlRoot, String stageTitle) throws IOException{
         if(stage != null){
             stage.close();
@@ -169,7 +233,10 @@ public class MainController {
         stage.show();
     }
 
-    //method to add pizza to order
+    /**
+     * Method to add pizza to order
+     * @param pizza
+     * */
     public void addPizza(Pizza pizza){
         order.add(pizza);
     }
