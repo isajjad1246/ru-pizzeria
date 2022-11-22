@@ -23,7 +23,7 @@
             <Button fx:id="addButton" layoutX="256.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#addButton" prefHeight="26.0" prefWidth="53.0" text="&gt;&gt;" />
             <Button fx:id="removeButton" layoutX="256.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#removeButton" prefHeight="26.0" prefWidth="53.0" text="&lt;&lt;" />
             <ListView fx:id="displayToppings" layoutX="339.0" layoutY="194.0" prefHeight="204.0" prefWidth="168.0" />
-            <Button fx:id="addToOrderButton" layoutX="386.0" layoutY="459.0" mnemonicParsing="false" text="Add to Order" />
+            <Button fx:id="addToOrderButton" layoutX="386.0" layoutY="459.0" mnemonicParsing="false" onAction="#addPizzaToOrder" text="Add to Order" />
             <Label alignment="CENTER" layoutX="235.0" layoutY="25.0" prefHeight="17.0" prefWidth="118.0" text="Chicago Style Pizza:" />
             <ImageView fx:id="imageView2" fitHeight="130.0" fitWidth="147.0" layoutX="400.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
          </children>

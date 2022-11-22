@@ -11,7 +11,8 @@ public class Order implements Customizable{
 
     public Order(){
         Random rand = new Random();
-        orderNumber = rand.nextInt();
+        orderNumber = rand.nextInt(1000)+0;
+        pizzaOrder = new ArrayList<Pizza>();
     }
 
     public void setOrderTotal(double temp){
