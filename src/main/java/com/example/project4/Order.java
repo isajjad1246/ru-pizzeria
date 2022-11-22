@@ -14,6 +14,10 @@ public class Order implements Customizable{
         orderNumber = rand.nextInt();
     }
 
+    public void setOrderTotal(double temp){
+        this.orderCost = temp;
+    }
+
     public boolean add(Object obj){
         //add pizza to order?
         //obj is the pizza, add it to the order
