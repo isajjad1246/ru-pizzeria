@@ -13,6 +13,10 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
+/**
+ * @author Ifrah Sajjad, Reiya Dave
+ * Class for CurrentOrderController
+ * */
 public class CurrentOrderController {
     private ChicagoStyleController chicagoStyleController;
     private NewYorkStyleController newYorkStyleController;
@@ -48,12 +52,18 @@ public class CurrentOrderController {
 
     private MainController mainController; //controller for main view
 
-
+    /**
+     * Method for handling controllers for main view controller
+     * @param mainController
+     *
+     * */
     public void setMainController(MainController mainController){
         this.mainController = mainController;
     }
 
-    //every time pizza is set to order, this is called and updated
+    /**
+     * Method where every time pizza is set to order, this is called and updated
+     * */
     @FXML
     public void display(){
         orderNum.setText(String.valueOf(currOrder.orderNumber));
@@ -65,7 +75,9 @@ public class CurrentOrderController {
 
     }
 
-    //button to add order to store orders
+    /**
+     * Method for adding order to store orders
+     * */
     @FXML
     public void addToStoreOrder(){
         //add the order to store order

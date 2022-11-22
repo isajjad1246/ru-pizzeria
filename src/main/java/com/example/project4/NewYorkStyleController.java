@@ -13,6 +13,10 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * @author Ifrah Sajjad, Reiya Dave
+ * Class for NewYorkStyleController
+ * */
 public class NewYorkStyleController implements Initializable {
 
     @FXML
@@ -47,11 +51,21 @@ public class NewYorkStyleController implements Initializable {
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-ny.png"));
     private Image byoImage = new Image(getClass().getResourceAsStream("byo-ny.png"));
 
+
     private MainController mainController; //controller for main view
 
+    /**
+     * Method for handling controllers for main view controller
+     * @param mainController
+     *
+     * */
     public void setMainController(MainController mainController){
         this.mainController = mainController;
     }
+    /**
+     * Method for selecting pizza flavor type
+     * @param event
+     * */
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
@@ -83,6 +97,10 @@ public class NewYorkStyleController implements Initializable {
 
     }
 
+    /**
+     * Method for size box
+     * @param event
+     * */
     @FXML
     void selectSize(ActionEvent event){
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
@@ -151,6 +169,10 @@ public class NewYorkStyleController implements Initializable {
 //
 //    }
 
+    /**
+     * Method for add button
+     * @param event
+     * */
     @FXML
     void addButton(MouseEvent event){
         if(displayToppings.getItems().size() >= 7){
@@ -171,6 +193,10 @@ public class NewYorkStyleController implements Initializable {
         }
     }
 
+    /**
+     * Method for remove button
+     * @param event
+     * */
     @FXML
     void removeButton(MouseEvent event){
         String availableItem = displayToppings.getSelectionModel().getSelectedItem();
@@ -187,7 +213,11 @@ public class NewYorkStyleController implements Initializable {
     //String currentViewItem;
 
 
-
+    /**
+     * Method for intialize since we are implementing initializable interface
+     * @param url
+     * @param rb
+     * */
     @Override
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
@@ -207,11 +237,20 @@ public class NewYorkStyleController implements Initializable {
 //        });
     }
 
+    /**
+     * Method for handling adding to order button
+     * @param event
+     *
+     * */
     @FXML
     public void addToOrderButton(ActionEvent event){
 
     }
 
+    /**
+     * Method for handling deluxe flavor for pizza type
+     *
+     * */
     @FXML
     public void deluxeFlavor(){
         //size button
@@ -247,6 +286,10 @@ public class NewYorkStyleController implements Initializable {
 
 
     }
+    /**
+     * Method for handling bbq flavor for pizza type
+     *
+     * */
     @FXML
     public void BBQChickenFlavor(){
         //size button
@@ -275,7 +318,10 @@ public class NewYorkStyleController implements Initializable {
             priceBox2.setText(String.valueOf(bbq.price()));
         }
     }
-
+    /**
+     * Method for handling meatzza flavor for pizza type
+     *
+     * */
     @FXML
     public void meatzzaFlavor(){
         //size button
@@ -304,6 +350,10 @@ public class NewYorkStyleController implements Initializable {
             priceBox2.setText(String.valueOf(meatzza.price()));
         }
     }
+    /**
+     * Method for handling byo flavor for pizza type
+     *
+     * */
     @FXML
     public void byoFlavor(){
         //size button
@@ -328,6 +378,11 @@ public class NewYorkStyleController implements Initializable {
         }
     }
 
+    /**
+     * Method for handling adding to order button
+     * @param event
+     *
+     * */
     @FXML
     public void addPizzaToOrder(ActionEvent event){
         if (flavorBox.getSelectionModel().getSelectedItem() == "Deluxe") {

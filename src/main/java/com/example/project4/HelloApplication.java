@@ -7,7 +7,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * @author Ifrah Sajjad, Reiya Dave
+ *
+ * Main class for running entire project. Our driver file.
+ * */
 public class HelloApplication extends Application {
+
+    /***
+     * Method for start
+     * @param stage
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml"));
@@ -17,6 +27,10 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Main method. Method we use to launch our program.
+     * @param args
+     * */
     public static void main(String[] args) {
         launch();
     }

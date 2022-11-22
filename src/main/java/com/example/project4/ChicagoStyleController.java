@@ -16,6 +16,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * @author ifrah sajjad, Reiya Dave
+ * Controller for ChicagoStyleController.fxml
+ */
+
 public class ChicagoStyleController implements Initializable {
 
     CurrentOrderController currentOrderController;
@@ -49,6 +54,10 @@ public class ChicagoStyleController implements Initializable {
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
     private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
 
+    /**
+     * Method for flavor box
+     * @param event
+     * **/
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
@@ -79,6 +88,10 @@ public class ChicagoStyleController implements Initializable {
 
     }
 
+    /**
+     * Method for size box
+     * @param event
+     * */
     @FXML
     void selectSize(ActionEvent event){
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
@@ -147,6 +160,11 @@ public class ChicagoStyleController implements Initializable {
 //
 //    }
 
+
+    /**
+     * Method for add button
+     * @param event
+     * */
     @FXML
     void addButton(MouseEvent event){
         if(displayToppings.getItems().size() >= 7){
@@ -167,6 +185,10 @@ public class ChicagoStyleController implements Initializable {
         }
     }
 
+    /**
+     * Method for remove button
+     * @param event
+     * */
     @FXML
     void removeButton(MouseEvent event){
         String availableItem = displayToppings.getSelectionModel().getSelectedItem();
@@ -183,7 +205,11 @@ public class ChicagoStyleController implements Initializable {
     //String currentViewItem;
 
 
-
+    /**
+     * Method for intialize since we are implementing initializable interface
+     * @param url
+     * @param rb
+     * */
     @Override
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
@@ -202,6 +228,11 @@ public class ChicagoStyleController implements Initializable {
 //            }
 //        });
     }
+
+    /**
+     * Method for handling deluxe flavor for pizza type
+     *
+     * */
     @FXML
     public void deluxeFlavor(){
         //size button
@@ -232,6 +263,11 @@ public class ChicagoStyleController implements Initializable {
 
 
     }
+
+    /**
+     * Method for handling bbq flavor for pizza type
+     *
+     * */
     @FXML
     public void BBQChickenFlavor(){
         //size button
@@ -261,6 +297,10 @@ public class ChicagoStyleController implements Initializable {
         }
     }
 
+    /**
+     * Method for handling meatzza flavor for pizza type
+     *
+     * */
     @FXML
     public void meatzzaFlavor(){
         //size button
@@ -289,6 +329,11 @@ public class ChicagoStyleController implements Initializable {
             priceBox2.setText(String.valueOf(meatzza.price()));
         }
     }
+
+    /**
+     * Method for handling byo flavor for pizza type
+     *
+     * */
     @FXML
     public void byoFlavor(){
         //size button
@@ -314,9 +359,21 @@ public class ChicagoStyleController implements Initializable {
     }
 
     private MainController mainController;
+
+    /**
+     * Method for handling controllers for main view controller
+     * @param mainController
+     *
+     * */
     public void setMainController(MainController mainController) { //
         this.mainController = mainController;
     }
+
+    /**
+     * Method for handling adding to order button
+     * @param event
+     *
+     * */
 
     @FXML
     public void addPizzaToOrder(ActionEvent event){
