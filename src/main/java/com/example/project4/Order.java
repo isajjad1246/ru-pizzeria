@@ -5,6 +5,9 @@ import java.util.Random;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * class for order type
+ * */
 public class Order implements Customizable{
     public int orderNumber;
     public double orderCost;

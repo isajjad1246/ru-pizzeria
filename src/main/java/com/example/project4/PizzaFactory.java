@@ -3,6 +3,10 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+
+/**
+ * interface class for pizza factory
+ * */
 public interface PizzaFactory {
     /**
      * initialized method for create deluxe pizza

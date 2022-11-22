@@ -3,6 +3,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * enum class for crust types
+ * */
 public enum Crust{
     DEEP_DISH("Deep dish"),
     PAN("Pan"),

@@ -5,6 +5,9 @@ import java.util.ArrayList;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * abstract class for pizza type
+ * */
 public abstract class Pizza implements Customizable {
     private ArrayList<Topping> toppings;
     private Crust crust;

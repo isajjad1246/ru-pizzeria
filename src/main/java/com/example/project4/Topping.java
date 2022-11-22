@@ -3,6 +3,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * enum class for toppings
+ * */
 public enum Topping{
     SAUSAGE("Sausage"),
     PEPPERONI("Pepperoni"),

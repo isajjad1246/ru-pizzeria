@@ -3,6 +3,10 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+
+/**
+ * class for customizable interface
+ * */
 public interface Customizable {
     /**
      * initialized add method
