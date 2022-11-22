@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Initializable {
 
-    private MainController mainController; //controller for main view
 
     @FXML
     private ListView <String> availableToppings = new ListView<>();
@@ -42,11 +41,12 @@ public class ChicagoStyleController implements Initializable {
     private ComboBox<String> flavorBox;
     @FXML
     private ImageView imageView2;
-    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
-    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-chicago.png"));
-    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
-    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
+//    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
+//    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-chicago.png"));
+//    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
+//    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
 
+    private MainController mainController; //controller for main view
 
     public void setMainController(MainController mainController){
         this.mainController = mainController;
@@ -55,25 +55,25 @@ public class ChicagoStyleController implements Initializable {
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
-            imageView2.setImage(deluxeImage);
+           // imageView2.setImage(deluxeImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             deluxeFlavor();
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
-            imageView2.setImage(bbqImage);
+        //    imageView2.setImage(bbqImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             BBQChickenFlavor();
         }
         if(flavorString.equalsIgnoreCase("Meatzza")){
-            imageView2.setImage(meatzzaImage);
+        //    imageView2.setImage(meatzzaImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             meatzzaFlavor();
         }
         if(flavorString.equalsIgnoreCase("BYO")){
-            imageView2.setImage(byoImage);
+        //    imageView2.setImage(byoImage);
             addButton.setDisable(false);
             removeButton.setDisable(false);
         }
@@ -162,7 +162,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.DEEP_DISH);
-            imageView2.setImage(deluxeImage);
+        //    imageView2.setImage(deluxeImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
@@ -192,7 +192,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.PAN);
-            imageView2.setImage(bbqImage);
+        //    imageView2.setImage(bbqImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
@@ -221,7 +221,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
-            imageView2.setImage(meatzzaImage);
+        //    imageView2.setImage(meatzzaImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
@@ -244,7 +244,7 @@ public class ChicagoStyleController implements Initializable {
         //display price-increase every time topping is added
         if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.PAN);
-            imageView2.setImage(byoImage);
+        //    imageView2.setImage(byoImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);

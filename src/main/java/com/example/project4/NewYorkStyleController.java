@@ -150,6 +150,12 @@ public class NewYorkStyleController implements Initializable {
 //            }
 //        });
     }
+
+    @FXML
+    public void addToOrderButton(ActionEvent event){
+
+    }
+
     @FXML
     public void deluxeFlavor(){
         //size button

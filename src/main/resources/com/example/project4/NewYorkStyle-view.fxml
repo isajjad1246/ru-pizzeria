@@ -20,7 +20,7 @@
             <ListView fx:id="availableToppings" layoutX="89.0" layoutY="234.0" prefHeight="211.0" prefWidth="161.0" />
             <Button fx:id="addButton" layoutX="305.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#addButton" text="&gt;&gt;&gt;" />
             <Button fx:id="removeButton" layoutX="305.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#removeButton" text="&lt;&lt;&lt;" />
-            <Button fx:id="addToOrderButton" layoutX="407.0" layoutY="493.0" mnemonicParsing="false" text="Add to Order" />
+            <Button fx:id="addToOrderButton" layoutX="407.0" layoutY="493.0" mnemonicParsing="false" onAction="#addToOrderButton" text="Add to Order" />
             <Label layoutX="264.0" layoutY="40.0" text="New York Style Pizza:" />
             <ComboBox fx:id="flavorBox" layoutX="175.0" layoutY="83.0" onAction="#selectFlavor" prefWidth="150.0" />
             <ImageView fx:id="imageView2" fitHeight="150.0" fitWidth="170.0" layoutX="451.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
