@@ -307,4 +307,9 @@ public class ChicagoStyleController implements Initializable {
             priceBox2.setText(String.valueOf(byo.price()));
         }
     }
+
+    private MainController mainController;
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
 }
