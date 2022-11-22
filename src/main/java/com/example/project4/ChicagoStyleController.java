@@ -40,34 +40,34 @@ public class ChicagoStyleController implements Initializable {
     private ComboBox<String> flavorBox;
     @FXML
     private ImageView imageView2;
-    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
+    /*private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
     private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-chicago.png"));
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
-    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
+    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));*/
 
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
-            imageView2.setImage(deluxeImage);
+            //imageView2.setImage(deluxeImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             deluxeFlavor();
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
-            imageView2.setImage(bbqImage);
+            //imageView2.setImage(bbqImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             BBQChickenFlavor();
         }
         if(flavorString.equalsIgnoreCase("Meatzza")){
-            imageView2.setImage(meatzzaImage);
+            //imageView2.setImage(meatzzaImage);
             addButton.setDisable(true);
             removeButton.setDisable(true);
             meatzzaFlavor();
         }
-        if(flavorString.equalsIgnoreCase("BYO")){
-            imageView2.setImage(byoImage);
+        if(flavorString.equalsIgnoreCase("Build Your Own")){
+            //imageView2.setImage(byoImage);
             addButton.setDisable(false);
             removeButton.setDisable(false);
         }
@@ -76,7 +76,64 @@ public class ChicagoStyleController implements Initializable {
 
     @FXML
     void selectSize(ActionEvent event){
+        String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
+        if(flavorString.equalsIgnoreCase("Deluxe")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                deluxe.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                deluxe.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                deluxe.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("BBQ")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                bbq.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(bbq.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                bbq.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString( bbq.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                bbq.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(bbq.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("Meatzza")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                meatzza.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                meatzza.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                meatzza.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("Build Your Own")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                byo.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                byo.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                byo.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+        }
     }
 
 //    @FXML
@@ -87,16 +144,16 @@ public class ChicagoStyleController implements Initializable {
 
     @FXML
     void addButton(MouseEvent event){
-        if(availableToppings.getItems().size() >= 7){
+        if(displayToppings.getItems().size() >= 7){
             ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
             alarm.setHeaderText("This is the maximum number of toppings");
             alarm.show();
         }
         else{
-            String availableItem = displayToppings.getSelectionModel().getSelectedItem();
-            displayToppings.getItems().remove(availableItem);
-            availableToppings.getItems().add(availableItem);
+            String availableItem = availableToppings.getSelectionModel().getSelectedItem();
+            availableToppings.getItems().remove(availableItem);
+            displayToppings.getItems().add(availableItem);
             String result = flavorBox.getSelectionModel().getSelectedItem();
             if(result.equals("Build Your Own")){
                 byo.add(availableItem);
@@ -107,9 +164,9 @@ public class ChicagoStyleController implements Initializable {
 
     @FXML
     void removeButton(MouseEvent event){
-        String availableItem = availableToppings.getSelectionModel().getSelectedItem();
-        availableToppings.getItems().remove(availableItem);
-        displayToppings.getItems().add(availableItem);
+        String availableItem = displayToppings.getSelectionModel().getSelectedItem();
+        displayToppings.getItems().remove(availableItem);
+        availableToppings.getItems().add(availableItem);
         String result = flavorBox.getSelectionModel().getSelectedItem();
         if(result.equals("Build Your Own")){
             byo.remove(availableItem);
@@ -155,7 +212,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.DEEP_DISH);
-            imageView2.setImage(deluxeImage);
+            //imageView2.setImage(deluxeImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
@@ -185,7 +242,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.PAN);
-            imageView2.setImage(bbqImage);
+            //imageView2.setImage(bbqImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
@@ -214,7 +271,7 @@ public class ChicagoStyleController implements Initializable {
         displayToppings.setItems(temp);
         if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
-            imageView2.setImage(meatzzaImage);
+            //imageView2.setImage(meatzzaImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
@@ -237,7 +294,7 @@ public class ChicagoStyleController implements Initializable {
         //display price-increase every time topping is added
         if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.PAN);
-            imageView2.setImage(byoImage);
+            //imageView2.setImage(byoImage);
         }
         if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);

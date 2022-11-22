@@ -15,4 +15,15 @@ public class BuildYourOwn extends Pizza{
         }
         return result;
     }
+    private double cost;
+    public BuildYourOwn(){
+        cost = price();
+    }
+
+    public double getCost(){
+        return cost;
+    }
+    public void setCost(Double cost2){
+        this.cost = cost2;
+    }
 }

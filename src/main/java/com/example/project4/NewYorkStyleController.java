@@ -55,6 +55,7 @@ public class NewYorkStyleController implements Initializable {
             addButton.setDisable(true);
             removeButton.setDisable(true);
             deluxeFlavor();
+            //selectSize(event, deluxe);
         }
         if(flavorString.equalsIgnoreCase("BBQ")){
             imageView2.setImage(bbqImage);
@@ -68,7 +69,7 @@ public class NewYorkStyleController implements Initializable {
             removeButton.setDisable(true);
             meatzzaFlavor();
         }
-        if(flavorString.equalsIgnoreCase("BYO")){
+        if(flavorString.equalsIgnoreCase("Build Your Own")){
             imageView2.setImage(byoImage);
             addButton.setDisable(false);
             removeButton.setDisable(false);
@@ -78,9 +79,63 @@ public class NewYorkStyleController implements Initializable {
 
     @FXML
     void selectSize(ActionEvent event){
+        String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
         String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
-        if (sizeString.equalsIgnoreCase(Size.SMALL.toString())){
-            //priceBox2.setText(Double.toString(byo.price()))
+        if(flavorString.equalsIgnoreCase("Deluxe")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                deluxe.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                deluxe.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                deluxe.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(deluxe.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("BBQ")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                bbq.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(bbq.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                bbq.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString( bbq.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                bbq.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(bbq.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("Meatzza")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                meatzza.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                meatzza.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                meatzza.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(meatzza.price()));
+            }
+        }
+        else if(flavorString.equalsIgnoreCase("Build Your Own")) {
+            if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
+                byo.setSize(Size.SMALL);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.MEDIUM.toString())) {
+                byo.setSize(Size.MEDIUM);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
+            else if (sizeString.equalsIgnoreCase(Size.LARGE.toString())) {
+                byo.setSize(Size.LARGE);
+                priceBox2.setText(Double.toString(byo.price()));
+            }
         }
     }
 
@@ -92,16 +147,16 @@ public class NewYorkStyleController implements Initializable {
 
     @FXML
     void addButton(MouseEvent event){
-        if(availableToppings.getItems().size() >= 7){
+        if(displayToppings.getItems().size() >= 7){
             ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
             alarm.setHeaderText("This is the maximum number of toppings");
             alarm.show();
         }
         else{
-            String availableItem = displayToppings.getSelectionModel().getSelectedItem();
-            displayToppings.getItems().remove(availableItem);
-            availableToppings.getItems().add(availableItem);
+            String availableItem = availableToppings.getSelectionModel().getSelectedItem();
+            availableToppings.getItems().remove(availableItem);
+            displayToppings.getItems().add(availableItem);
             String result = flavorBox.getSelectionModel().getSelectedItem();
             if(result.equals("Build Your Own")){
                 byo.add(availableItem);
@@ -112,9 +167,9 @@ public class NewYorkStyleController implements Initializable {
 
     @FXML
     void removeButton(MouseEvent event){
-        String availableItem = availableToppings.getSelectionModel().getSelectedItem();
-        availableToppings.getItems().remove(availableItem);
-        displayToppings.getItems().add(availableItem);
+        String availableItem = displayToppings.getSelectionModel().getSelectedItem();
+        displayToppings.getItems().remove(availableItem);
+        availableToppings.getItems().add(availableItem);
         String result = flavorBox.getSelectionModel().getSelectedItem();
         if(result.equals("Build Your Own")){
             byo.remove(availableItem);
@@ -165,7 +220,7 @@ public class NewYorkStyleController implements Initializable {
             deluxe.setCrust(Crust.BROOKLYN);
             imageView2.setImage(deluxeImage);
         }
-        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+        if(sizeBox2.getSelectionModel().getSelectedItem() == "small "){
             deluxe.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(deluxe.price()));
             System.out.println("price" + deluxe.price());
