@@ -1,6 +1,9 @@
 package com.example.project4;
 import java.util.ArrayList;
 import java.util.Random;
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 
 public class Order implements Customizable{
     public int orderNumber;
@@ -9,16 +12,26 @@ public class Order implements Customizable{
     public ArrayList<Pizza> pizzaOrder;
     //add and remove pizzas from arraylist using add() and remove()
 
+    /**
+     * Constructor to initialize order
+     * */
     public Order(){
         Random rand = new Random();
         orderNumber = rand.nextInt(1000)+0;
         pizzaOrder = new ArrayList<Pizza>();
     }
 
+    /**
+     * setter method to set the order total
+     * */
     public void setOrderTotal(double temp){
         this.orderCost = temp;
     }
 
+    /**
+     * method to add pizza to order
+     * @return boolean
+     * */
     public boolean add(Object obj){
         //add pizza to order?
         //obj is the pizza, add it to the order
@@ -30,6 +43,10 @@ public class Order implements Customizable{
         return false;
     }
 
+    /**
+     * method to remove pizza from order
+     * @return boolean
+     * */
     public boolean remove(Object obj){
         Pizza temp = (Pizza) obj;
         if (pizzaOrder.remove(temp) == true){
@@ -38,6 +55,10 @@ public class Order implements Customizable{
         return false;
     }
 
+    /**
+     * method to cast order to string
+     * @return String
+     * */
     public String orderToString() {
         //order number plus pizza
         String result = "";
@@ -49,11 +70,19 @@ public class Order implements Customizable{
     }
 
     //method for cost of order
+    /**
+     * method to add cost to order total
+     * @return double
+     * */
     public double addCost(Double cost){
         orderCost += cost;
         return orderCost;
     }
 
+    /**
+     * method to remove cost from order total
+     * @return double
+     * */
     public double removeCost(Double cost){
         orderCost -= cost;
         return orderCost;

@@ -2,9 +2,17 @@ package com.example.project4;
 
 import java.util.ArrayList;
 
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
+
 public class Deluxe extends Pizza{
 
+
     //sets toppings
+    /**
+     * constructor to initialize deluxe pizza
+     * */
     public Deluxe(){
         getToppings().add(Topping.SAUSAGE);
         getToppings().add(Topping.PEPPERONI);
@@ -13,6 +21,10 @@ public class Deluxe extends Pizza{
         getToppings().add(Topping.MUSHROOM);
     }
 
+    /**
+     * method to give price of deluxe pizza
+     * @return double
+     * */
     public double price(){
         double result = 0;
         if (getSize() == Size.SMALL){
