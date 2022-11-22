@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Initializable {
 
+    private MainController mainController; //controller for main view
+
     @FXML
     private ListView <String> availableToppings = new ListView<>();
     @FXML
@@ -45,6 +47,10 @@ public class ChicagoStyleController implements Initializable {
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
     private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
 
+
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
+    }
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
@@ -72,6 +78,7 @@ public class ChicagoStyleController implements Initializable {
     @FXML
     void selectSize(ActionEvent event){
         String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
+        //if(sizeString.equals(Size.SMALL.toString()))
     }
 
 //    @FXML

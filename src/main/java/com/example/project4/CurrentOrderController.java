@@ -42,6 +42,12 @@ public class CurrentOrderController {
 
     //methods for actions and stuff
 
+    private MainController mainController; //controller for main view
+
+
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
+    }
 
     //every time pizza is set to order, this is called and updated
     @FXML

@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class MainController {
 
+    private MainController mainController; //controller for main view
     @FXML
     private Button chicagoStyle;
     @FXML
@@ -24,14 +25,12 @@ public class MainController {
 
     @FXML
     private Button storeOrderButton;
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+
+
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
     }
-
     @FXML
     public void chicagoStyleClick() throws IOException {
         //open new window to chicago style view
@@ -58,8 +57,10 @@ public class MainController {
 
     @FXML
     public void currOrderClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrder-view.fxml"));
         //open new window to current order view
-        Parent root = FXMLLoader.load(getClass().getResource("CurrentOrder-view.fxml"));
+        Parent root = loader.load();
+//        ChicagoStyleController controller = FXMLLoader.getController();
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Current Order");
@@ -72,8 +73,9 @@ public class MainController {
 
     @FXML
     public void storeOrderClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrders-view.fxml"));
         //open new window to store order view
-        Parent root = FXMLLoader.load(getClass().getResource("StoreOrders-view.fxml"));
+        Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Store Orders");

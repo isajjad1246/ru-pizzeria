@@ -22,7 +22,11 @@ public class StoreOrdersController {
     @FXML
     public Button exportStoreOrdersButton;
 
+    private MainController mainController; //controller for main view
 
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
+    }
     public void orderDropDown(ActionEvent actionEvent) {
 
     }

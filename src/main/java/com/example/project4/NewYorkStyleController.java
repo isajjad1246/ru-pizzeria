@@ -47,6 +47,11 @@ public class NewYorkStyleController implements Initializable {
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-ny.png"));
     private Image byoImage = new Image(getClass().getResourceAsStream("byo-ny.png"));
 
+    private MainController mainController; //controller for main view
+
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
+    }
     @FXML
     void selectFlavor(ActionEvent event) {
         String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
