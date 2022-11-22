@@ -31,6 +31,6 @@
       <TextField fx:id="orderTotal" layoutX="165.0" layoutY="602.0" prefHeight="26.0" prefWidth="134.0" />
       <Button fx:id="placeOrder" layoutX="410.0" layoutY="602.0" mnemonicParsing="false" onMouseClicked="#addToStoreOrder" text="Place Order" />
       <Button fx:id="clearOrder" layoutX="516.0" layoutY="602.0" mnemonicParsing="false" text="Clear Order" />
-      <Button fx:id="displayOrderButton" layoutX="556.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#display" text="Display Order" />
+      <Button fx:id="displayOrderButton" layoutX="556.0" layoutY="103.0" mnemonicParsing="false" onAction="#display" onMouseClicked="#display" text="Display Order" />
    </children>
 </AnchorPane>

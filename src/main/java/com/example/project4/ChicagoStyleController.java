@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class ChicagoStyleController implements Initializable {
 
+    CurrentOrderController currentOrderController;
     @FXML
     private ListView <String> availableToppings = new ListView<>();
     @FXML
@@ -73,6 +74,7 @@ public class ChicagoStyleController implements Initializable {
             //imageView2.setImage(byoImage);
             addButton.setDisable(false);
             removeButton.setDisable(false);
+            byoFlavor();
         }
 
     }
@@ -330,7 +332,7 @@ public class ChicagoStyleController implements Initializable {
         else if (flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own") {
             mainController.addPizzaToOrder(byo);
         }
-        System.out.println("added");
+        //System.out.println("added");
     }
 
 
