@@ -78,6 +78,7 @@ public class NewYorkStyleController implements Initializable {
             imageView2.setImage(byoImage);
             addButton.setDisable(false);
             removeButton.setDisable(false);
+            byoFlavor();
         }
 
     }
@@ -325,5 +326,22 @@ public class NewYorkStyleController implements Initializable {
             byo.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(byo.price()));
         }
+    }
+
+    @FXML
+    public void addPizzaToOrder(ActionEvent event){
+        if (flavorBox.getSelectionModel().getSelectedItem() == "Deluxe") {
+            mainController.addPizzaToOrder(deluxe);
+        }
+        else if (flavorBox.getSelectionModel().getSelectedItem() == "BBQ") {
+            mainController.addPizzaToOrder(bbq);
+        }
+        else if (flavorBox.getSelectionModel().getSelectedItem() == "Meatzza") {
+            mainController.addPizzaToOrder(meatzza);
+        }
+        else if (flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own") {
+            mainController.addPizzaToOrder(byo);
+        }
+        //System.out.println("added");
     }
 }
