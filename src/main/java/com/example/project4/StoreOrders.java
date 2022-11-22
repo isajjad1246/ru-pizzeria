@@ -8,6 +8,10 @@ import java.util.ArrayList;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+
+/**
+ *class for store orders
+ * */
 public class StoreOrders implements Customizable{
 
     //arraylist of order type

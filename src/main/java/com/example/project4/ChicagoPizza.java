@@ -3,6 +3,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * class for chicago pizza
+ * */
 public class ChicagoPizza implements PizzaFactory{
     /**
      * Method to create chicago deluxe pizza

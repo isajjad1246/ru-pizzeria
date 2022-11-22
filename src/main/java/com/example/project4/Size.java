@@ -3,6 +3,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * enum class for pizza size
+ * */
 public enum Size{
     SMALL("Small"),
     MEDIUM("Medium"),

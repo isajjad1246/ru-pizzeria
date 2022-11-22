@@ -3,6 +3,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * class for ny pizza type
+ * */
 public class NYPizza implements PizzaFactory{
     /**
      * Method to create ny deluxe pizza

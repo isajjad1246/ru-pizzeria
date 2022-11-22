@@ -6,6 +6,10 @@ import java.util.ArrayList;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+
+/**
+ * subclass for deluxe type
+ * */
 public class Deluxe extends Pizza{
 
 

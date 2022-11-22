@@ -4,6 +4,9 @@ package com.example.project4;
  * @author Reiya Dave, Ifrah Sajjad
  * */
 
+/**
+ * subclass for bbq chicken
+ * */
 public class BBQChicken extends Pizza{
 
     /**

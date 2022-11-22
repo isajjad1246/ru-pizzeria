@@ -2,7 +2,12 @@ package com.example.project4;
 /**
  * @author Reiya Dave, Ifrah Sajjad
  * */
+
+/**
+ * subclass for meatzza type
+ * */
 public class Meatzza extends Pizza{
+
     /**
      * constructor to initialize meatzza pizza
      * */
